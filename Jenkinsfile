@@ -6,7 +6,7 @@ pipeline {
 
         stage("Git Checkout"){
             steps {
-                git branch: 'main', url: 'https://github.com/vishalchauhan91196/java-app.git'
+                git branch: 'main', url: 'https://github.com/Shantanu-2001/java-app'
             }
         }
 
@@ -31,7 +31,7 @@ pipeline {
         stage("Static Code Analysis"){
             steps {
                 script {
-                    withSonarQubeEnv(credentialsId: 'sonarqube') {
+                    withSonarQubeEnv(credentialsId: 'f70fdf8b-aa63-4a47-b822-da8e98c621e8') {
                         sh 'mvn clean package sonar:sonar'
                     }
                 }
